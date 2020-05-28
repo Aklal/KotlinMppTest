@@ -1,0 +1,3 @@
+rootProject.name='MppTest'
+include ':app'
+include ':SharedCode'

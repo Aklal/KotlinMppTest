@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
+    kotlin("plugin.serialization")
 }
 
 kotlin {
@@ -30,6 +31,7 @@ kotlin {
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serializationVersion")
         implementation("io.ktor:ktor-client-core:$ktorVersion")
         implementation("io.ktor:ktor-client-json:$ktorVersion")
+        implementation("io.ktor:ktor-client-serialization:$ktorVersion")//Kotlinxserializer
     }
 
     sourceSets["androidMain"].dependencies {

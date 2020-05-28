@@ -5,8 +5,10 @@ import com.jetbrains.handson.mpp.mobile.remoteapi.utils.*
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.features.json.JsonFeature
+import io.ktor.client.features.json.serializer.KotlinxSerializer
 import io.ktor.client.request.get
 import io.ktor.client.statement.HttpResponse
+import kotlinx.serialization.builtins.list
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 
@@ -30,7 +32,7 @@ class PostApiClient constructor(
         val tasksJson = client.get<String>("$BASE_ENDPOINT/posts")
 
         val tasks = jsonInst.parse(Post.serializer().list, tasksJson)
-
+        
         Either.Right(tasks)
     } catch (e: Exception) {
         handleError(e)

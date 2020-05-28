@@ -29,6 +29,7 @@ kotlin {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serializationVersion")
         implementation("io.ktor:ktor-client-core:$ktorVersion")
+        implementation("io.ktor:ktor-client-json:$ktorVersion")
     }
 
     sourceSets["androidMain"].dependencies {

@@ -1,39 +1,51 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-ext.kotlin_version = '1.3.71'
+import org.jetbrains.kotlin.config.KotlinCompilerVersion
+
+plugins {
+    id("com.android.application")
+    kotlin("android")
+    kotlin("android.extensions")
+}
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
-
+    compileSdkVersion(Versions.compile_sdk)
+    buildToolsVersion = Versions.buildToolsVersion
     defaultConfig {
-        applicationId "com.mpp.mobilconf"
-        minSdkVersion 16
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        applicationId = "co.touchlab.kampstarter"
+        minSdkVersion(Versions.min_sdk)
+        targetSdkVersion(Versions.target_sdk)
+        versionCode = 1
+        versionName = "1.0"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    packagingOptions {
+        exclude("META-INF/*.kotlin_module")
+    }
     buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        getByName("release")  {
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
-
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
-    implementation project(':SharedCode')
+    implementation(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
+    implementation(project(":SharedCode"))
+    implementation(Deps.recyclerView)
+    implementation(Deps.material_x)
+    implementation(Deps.app_compat_x)
+    implementation(Deps.core_ktx)
+    implementation(Deps.Ktor.androidCore)
+    implementation(Deps.constraintlayout)
+    implementation(Deps.SqlDelight.runtimeJdk)
+    implementation(Deps.SqlDelight.driverAndroid)
+    implementation(Deps.Coroutines.jdk)
+    implementation(Deps.Coroutines.android)
+    implementation(Deps.multiplatformSettings)
+    implementation(Deps.koinCore)
+    testImplementation(Deps.junit)
 }

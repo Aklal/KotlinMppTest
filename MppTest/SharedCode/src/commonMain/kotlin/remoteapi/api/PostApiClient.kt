@@ -1,5 +1,10 @@
 package com.jetbrains.handson.mpp.mobile.remoteapi.api
 
+import com.jetbrains.handson.mpp.mobile.remoteapi.model.Post
+import com.jetbrains.handson.mpp.mobile.remoteapi.utils.*
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonConfiguration
+
 
 class PostApiClient constructor(
     httpClientEngine: HttpClientEngine? = null
@@ -16,18 +21,18 @@ class PostApiClient constructor(
         }
     }
 
-    suspend fun getEvents(): Either<RemoteApiError, List<Event>> = try {
+    suspend fun getPosts(): Either<RemoteApiError, List<Post>> = try {
         val tasksJson = client.get<String>("$BASE_ENDPOINT/posts")
 
-        val tasks = jsonInst.parse(Event.serializer().list, tasksJson)
+        val tasks = jsonInst.parse(Post.serializer().list, tasksJson)
 
         Either.Right(tasks)
     } catch (e: Exception) {
         handleError(e)
     }
 
-    suspend fun getEventById(id: String): Either<RemoteApiError, Event> = try {
-        val task = client.get<Event>("$BASE_ENDPOINT/posts/$id")
+    suspend fun getPostById(id: String): Either<RemoteApiError, Post> = try {
+        val task = client.get<Post>("$BASE_ENDPOINT/posts/$id")
 
         Either.Right(task)
     } catch (e: Exception) {

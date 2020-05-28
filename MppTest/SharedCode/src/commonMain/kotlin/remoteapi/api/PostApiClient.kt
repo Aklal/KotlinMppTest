@@ -19,6 +19,7 @@ class PostApiClient constructor(
 
     companion object {
         const val BASE_ENDPOINT = "http://jsonplaceholder.typicode.com"
+        const val ENDPOINT = "$BASE_ENDPOINT/posts"
         val jsonInst = Json(JsonConfiguration.Stable.copy(prettyPrint = true))
     }
 
@@ -29,19 +30,19 @@ class PostApiClient constructor(
     }
 
     suspend fun getPosts(): Either<RemoteApiError, List<Post>> = try {
-        val tasksJson = client.get<String>("$BASE_ENDPOINT/posts")
+        val postsJson = client.get<String>("ENDPOINT")
 
-        val tasks = jsonInst.parse(Post.serializer().list, tasksJson)
+        val posts = jsonInst.parse(Post.serializer().list, postsJson)
         
-        Either.Right(tasks)
+        Either.Right(posts)
     } catch (e: Exception) {
         handleError(e)
     }
 
     suspend fun getPostById(id: String): Either<RemoteApiError, Post> = try {
-        val task = client.get<Post>("$BASE_ENDPOINT/posts/$id")
+        val post = client.get<Post>("$ENDPOINT/$id")
 
-        Either.Right(task)
+        Either.Right(post)
     } catch (e: Exception) {
         handleError(e)
     }

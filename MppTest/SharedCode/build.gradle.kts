@@ -22,8 +22,11 @@ kotlin {
 
     jvm("android")
 
+    val serializationVersion = "0.20.0"
+
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serializationVersion")
     }
 
     sourceSets["androidMain"].dependencies {

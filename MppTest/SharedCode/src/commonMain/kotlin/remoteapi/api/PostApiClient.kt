@@ -2,6 +2,10 @@ package com.jetbrains.handson.mpp.mobile.remoteapi.api
 
 import com.jetbrains.handson.mpp.mobile.remoteapi.model.Post
 import com.jetbrains.handson.mpp.mobile.remoteapi.utils.*
+import io.ktor.client.HttpClient
+import io.ktor.client.engine.HttpClientEngine
+import io.ktor.client.request.get
+import io.ktor.client.statement.HttpResponse
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 

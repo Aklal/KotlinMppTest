@@ -23,10 +23,12 @@ kotlin {
     jvm("android")
 
     val serializationVersion = "0.20.0"
+    val ktorVersion = "1.3.2"
 
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serializationVersion")
+        implementation("io.ktor:ktor-client-core:$ktorVersion")
     }
 
     sourceSets["androidMain"].dependencies {

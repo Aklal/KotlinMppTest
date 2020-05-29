@@ -44,7 +44,7 @@ kotlin {
         //implementation(Deps.SqlDelight.runtime)
         implementation(Deps.Ktor.commonCore)
         implementation(Deps.Ktor.commonJson)
-        implementation(Deps.Ktor.commonLogging)
+        //implementation(Deps.Ktor.commonLogging)
         implementation(Deps.Coroutines.common)
 //        implementation(Deps.stately)
 //        implementation(Deps.multiplatformSettings)
@@ -64,13 +64,13 @@ kotlin {
     sourceSets["androidMain"].dependencies {
         implementation(kotlin("stdlib", Versions.kotlin))
         //implementation(Deps.SqlDelight.driverAndroid)
-        implementation(Deps.Ktor.jvmCore)
-        implementation(Deps.Ktor.jvmJson)
-        implementation(Deps.Ktor.jvmLogging)
+//        implementation(Deps.Ktor.jvmCore)
+//        implementation(Deps.Ktor.jvmJson)
+        //implementation(Deps.Ktor.jvmLogging)
         implementation(Deps.Coroutines.jdk)
-        implementation(Deps.Coroutines.android)
+        //implementation(Deps.Coroutines.android)
         implementation(Deps.Ktor.androidSerialization)
-        implementation(Deps.Ktor.androidCore)
+//        implementation(Deps.Ktor.androidCore)
     }
 
     sourceSets["androidTest"].dependencies {
@@ -80,21 +80,21 @@ kotlin {
 //        implementation(Deps.AndroidXTest.junit)
 //        implementation(Deps.AndroidXTest.runner)
 //        implementation(Deps.AndroidXTest.rules)
-        implementation(Deps.Coroutines.test)
+        //implementation(Deps.Coroutines.test)
         implementation("org.robolectric:robolectric:4.3")
     }
 
     sourceSets["iosMain"].dependencies {
         //implementation(Deps.SqlDelight.driverIos)
-        implementation(Deps.Ktor.ios)
-        implementation(Deps.Ktor.iosCore)
-        implementation(Deps.Ktor.iosJson)
-        implementation(Deps.Ktor.iosLogging)
-        implementation(Deps.Coroutines.native) {
-            version {
-                strictly("1.3.5-native-mt")
-            }
-        }
+//        implementation(Deps.Ktor.ios)
+//        implementation(Deps.Ktor.iosCore)
+//        implementation(Deps.Ktor.iosJson)
+//        implementation(Deps.Ktor.iosLogging)
+//        implementation(Deps.Coroutines.native) {
+//            version {
+//                strictly("1.3.5-native-mt")
+//            }
+//        }
         implementation(Deps.Ktor.iosSerialization)
     }
 

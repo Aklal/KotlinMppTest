@@ -41,29 +41,29 @@ kotlin {
 
     sourceSets["commonMain"].dependencies {
         implementation(kotlin("stdlib-common", Versions.kotlin))
-        implementation(Deps.SqlDelight.runtime)
+        //implementation(Deps.SqlDelight.runtime)
         implementation(Deps.Ktor.commonCore)
         implementation(Deps.Ktor.commonJson)
         implementation(Deps.Ktor.commonLogging)
         implementation(Deps.Coroutines.common)
-        implementation(Deps.stately)
-        implementation(Deps.multiplatformSettings)
-        implementation(Deps.koinCore)
+//        implementation(Deps.stately)
+//        implementation(Deps.multiplatformSettings)
+//        implementation(Deps.koinCore)
         implementation(Deps.Ktor.commonSerialization)
         //api(Deps.kermit)
     }
 
 
-    sourceSets["commonTest"].dependencies {
-        implementation(Deps.multiplatformSettingsTest)
-        implementation(Deps.KotlinTest.common)
-        implementation(Deps.KotlinTest.annotations)
-        implementation(Deps.koinTest)
-    }
+//    sourceSets["commonTest"].dependencies {
+//        implementation(Deps.multiplatformSettingsTest)
+//        implementation(Deps.KotlinTest.common)
+//        implementation(Deps.KotlinTest.annotations)
+//        implementation(Deps.koinTest)
+//    }
 
     sourceSets["androidMain"].dependencies {
         implementation(kotlin("stdlib", Versions.kotlin))
-        implementation(Deps.SqlDelight.driverAndroid)
+        //implementation(Deps.SqlDelight.driverAndroid)
         implementation(Deps.Ktor.jvmCore)
         implementation(Deps.Ktor.jvmJson)
         implementation(Deps.Ktor.jvmLogging)
@@ -74,18 +74,18 @@ kotlin {
     }
 
     sourceSets["androidTest"].dependencies {
-        implementation(Deps.KotlinTest.jvm)
-        implementation(Deps.KotlinTest.junit)
-        implementation(Deps.AndroidXTest.core)
-        implementation(Deps.AndroidXTest.junit)
-        implementation(Deps.AndroidXTest.runner)
-        implementation(Deps.AndroidXTest.rules)
+//        implementation(Deps.KotlinTest.jvm)
+//        implementation(Deps.KotlinTest.junit)
+//        implementation(Deps.AndroidXTest.core)
+//        implementation(Deps.AndroidXTest.junit)
+//        implementation(Deps.AndroidXTest.runner)
+//        implementation(Deps.AndroidXTest.rules)
         implementation(Deps.Coroutines.test)
         implementation("org.robolectric:robolectric:4.3")
     }
 
     sourceSets["iosMain"].dependencies {
-        implementation(Deps.SqlDelight.driverIos)
+        //implementation(Deps.SqlDelight.driverIos)
         implementation(Deps.Ktor.ios)
         implementation(Deps.Ktor.iosCore)
         implementation(Deps.Ktor.iosJson)

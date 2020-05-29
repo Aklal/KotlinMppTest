@@ -28,27 +28,27 @@ object Deps {
     val recyclerView = "androidx.recyclerview:recyclerview:1.1.0"
     val android_gradle_plugin = "com.android.tools.build:gradle:${Versions.android_gradle_plugin}"
     val junit = "junit:junit:${Versions.junit}"
-    val stately = "co.touchlab:stately-common:${Versions.stately}"
-    val multiplatformSettings = "com.russhwolf:multiplatform-settings:${Versions.multiplatformSettings}"
-    val multiplatformSettingsTest = "com.russhwolf:multiplatform-settings-test:${Versions.multiplatformSettings}"
-    val koinCore = "org.koin:koin-core:${Versions.koin}"
-    val koinTest = "org.koin:koin-test:${Versions.koin}"
-    val cocoapodsext = "co.touchlab:kotlinnativecocoapods:${Versions.cocoapodsext}"
-    val kermit = "co.touchlab:kermit:${Versions.kermit}"
+//    val stately = "co.touchlab:stately-common:${Versions.stately}"
+//    val multiplatformSettings = "com.russhwolf:multiplatform-settings:${Versions.multiplatformSettings}"
+//    val multiplatformSettingsTest = "com.russhwolf:multiplatform-settings-test:${Versions.multiplatformSettings}"
+//    val koinCore = "org.koin:koin-core:${Versions.koin}"
+//    val koinTest = "org.koin:koin-test:${Versions.koin}"
+//    val cocoapodsext = "co.touchlab:kotlinnativecocoapods:${Versions.cocoapodsext}"
+//    val kermit = "co.touchlab:kermit:${Versions.kermit}"
 
-    object AndroidXTest {
-        val core = "androidx.test:core:${Versions.androidx_test}"
-        val junit = "androidx.test.ext:junit:${Versions.androidx_test_ext}"
-        val runner = "androidx.test:runner:${Versions.androidx_test}"
-        val rules = "androidx.test:rules:${Versions.androidx_test}"
-    }
-
-    object KotlinTest {
-        val common =      "org.jetbrains.kotlin:kotlin-test-common:${Versions.kotlin}"
-        val annotations = "org.jetbrains.kotlin:kotlin-test-annotations-common:${Versions.kotlin}"
-        val jvm =         "org.jetbrains.kotlin:kotlin-test:${Versions.kotlin}"
-        val junit =       "org.jetbrains.kotlin:kotlin-test-junit:${Versions.kotlin}"
-    }
+//    object AndroidXTest {
+//        val core = "androidx.test:core:${Versions.androidx_test}"
+//        val junit = "androidx.test.ext:junit:${Versions.androidx_test_ext}"
+//        val runner = "androidx.test:runner:${Versions.androidx_test}"
+//        val rules = "androidx.test:rules:${Versions.androidx_test}"
+//    }
+//
+//    object KotlinTest {
+//        val common =      "org.jetbrains.kotlin:kotlin-test-common:${Versions.kotlin}"
+//        val annotations = "org.jetbrains.kotlin:kotlin-test-annotations-common:${Versions.kotlin}"
+//        val jvm =         "org.jetbrains.kotlin:kotlin-test:${Versions.kotlin}"
+//        val junit =       "org.jetbrains.kotlin:kotlin-test-junit:${Versions.kotlin}"
+//    }
     object Coroutines {
         val common = "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${Versions.coroutines}"
         val jdk = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
@@ -56,13 +56,13 @@ object Deps {
         val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
         val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
     }
-    object SqlDelight{
-        val gradle = "com.squareup.sqldelight:gradle-plugin:${Versions.sqlDelight}"
-        val runtime = "com.squareup.sqldelight:runtime:${Versions.sqlDelight}"
-        val runtimeJdk = "com.squareup.sqldelight:runtime-jvm:${Versions.sqlDelight}"
-        val driverIos = "com.squareup.sqldelight:native-driver:${Versions.sqlDelight}"
-        val driverAndroid = "com.squareup.sqldelight:android-driver:${Versions.sqlDelight}"
-    }
+//    object SqlDelight{
+//        val gradle = "com.squareup.sqldelight:gradle-plugin:${Versions.sqlDelight}"
+//        val runtime = "com.squareup.sqldelight:runtime:${Versions.sqlDelight}"
+//        val runtimeJdk = "com.squareup.sqldelight:runtime-jvm:${Versions.sqlDelight}"
+//        val driverIos = "com.squareup.sqldelight:native-driver:${Versions.sqlDelight}"
+//        val driverAndroid = "com.squareup.sqldelight:android-driver:${Versions.sqlDelight}"
+//    }
     object Ktor {
         val commonCore = "io.ktor:ktor-client-core:${Versions.ktor}"
         val commonJson = "io.ktor:ktor-client-json:${Versions.ktor}"

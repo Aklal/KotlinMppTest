@@ -8,8 +8,8 @@ buildscript {
     }
     dependencies {
         classpath(Deps.android_gradle_plugin)
-        classpath(Deps.SqlDelight.gradle)
-        classpath(Deps.cocoapodsext)
+//        classpath(Deps.SqlDelight.gradle)
+//        classpath(Deps.cocoapodsext)
         classpath("org.jetbrains.kotlin:kotlin-serialization:${Versions.kotlin}")
 
         classpath(kotlin("gradle-plugin", Versions.kotlin))

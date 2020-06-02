@@ -2,8 +2,20 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
+    kotlin("plugin.serialization")
     id("kotlinx-serialization")
     id("com.android.library")
+}
+
+android {
+    compileSdkVersion(29)
+    defaultConfig {
+        minSdkVersion(Versions.min_sdk)
+        targetSdkVersion(Versions.target_sdk)
+        versionCode = 1
+        versionName = "1.0"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
 }
 
 android {
@@ -41,6 +53,7 @@ kotlin {
 
     sourceSets["commonMain"].dependencies {
         implementation(kotlin("stdlib-common", Versions.kotlin))
+<<<<<<< HEAD
         implementation(Deps.SqlDelight.runtime)
         implementation(Deps.Ktor.commonCore)
         implementation(Deps.Ktor.commonJson)
@@ -48,11 +61,65 @@ kotlin {
         implementation(Deps.Coroutines.common)
         implementation(Deps.multiplatformSettings)
         implementation(Deps.Ktor.commonSerialization)
+=======
+        //implementation(Deps.SqlDelight.runtime)
+        implementation(Deps.Ktor.commonCore)
+        implementation(Deps.Ktor.commonJson)
+        //implementation(Deps.Ktor.commonLogging)
+        implementation(Deps.Coroutines.common)
+//        implementation(Deps.stately)
+//        implementation(Deps.multiplatformSettings)
+//        implementation(Deps.koinCore)
+        implementation(Deps.Ktor.commonSerialization)
+        //api(Deps.kermit)
+>>>>>>> Set_build_gradle_as_KaMPKit
     }
 
+
+//    sourceSets["commonTest"].dependencies {
+//        implementation(Deps.multiplatformSettingsTest)
+//        implementation(Deps.KotlinTest.common)
+//        implementation(Deps.KotlinTest.annotations)
+//        implementation(Deps.koinTest)
+//    }
+
     sourceSets["androidMain"].dependencies {
-        implementation("org.jetbrains.kotlin:kotlin-stdlib")
+        implementation(kotlin("stdlib", Versions.kotlin))
+        //implementation(Deps.SqlDelight.driverAndroid)
+//        implementation(Deps.Ktor.jvmCore)
+//        implementation(Deps.Ktor.jvmJson)
+        //implementation(Deps.Ktor.jvmLogging)
+        implementation(Deps.Coroutines.jdk)
+        //implementation(Deps.Coroutines.android)
+        implementation(Deps.Ktor.androidSerialization)
+//        implementation(Deps.Ktor.androidCore)
     }
+
+    sourceSets["androidTest"].dependencies {
+//        implementation(Deps.KotlinTest.jvm)
+//        implementation(Deps.KotlinTest.junit)
+//        implementation(Deps.AndroidXTest.core)
+//        implementation(Deps.AndroidXTest.junit)
+//        implementation(Deps.AndroidXTest.runner)
+//        implementation(Deps.AndroidXTest.rules)
+        //implementation(Deps.Coroutines.test)
+        implementation("org.robolectric:robolectric:4.3")
+    }
+
+    sourceSets["iosMain"].dependencies {
+        //implementation(Deps.SqlDelight.driverIos)
+//        implementation(Deps.Ktor.ios)
+//        implementation(Deps.Ktor.iosCore)
+//        implementation(Deps.Ktor.iosJson)
+//        implementation(Deps.Ktor.iosLogging)
+//        implementation(Deps.Coroutines.native) {
+//            version {
+//                strictly("1.3.5-native-mt")
+//            }
+//        }
+        implementation(Deps.Ktor.iosSerialization)
+    }
+
 }
 
 val packForXcode by tasks.creating(Sync::class) {

@@ -1,3 +1,3 @@
-rootProject.name='MppTest'
-include ':app'
-include ':SharedCode'
+include(":app", ":SharedCode")
+rootProject.name = "MppTest"
+enableFeaturePreview("GRADLE_METADATA")

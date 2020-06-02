@@ -53,15 +53,6 @@ kotlin {
 
     sourceSets["commonMain"].dependencies {
         implementation(kotlin("stdlib-common", Versions.kotlin))
-<<<<<<< HEAD
-        implementation(Deps.SqlDelight.runtime)
-        implementation(Deps.Ktor.commonCore)
-        implementation(Deps.Ktor.commonJson)
-        implementation(Deps.Ktor.commonLogging)
-        implementation(Deps.Coroutines.common)
-        implementation(Deps.multiplatformSettings)
-        implementation(Deps.Ktor.commonSerialization)
-=======
         //implementation(Deps.SqlDelight.runtime)
         implementation(Deps.Ktor.commonCore)
         implementation(Deps.Ktor.commonJson)
@@ -72,7 +63,6 @@ kotlin {
 //        implementation(Deps.koinCore)
         implementation(Deps.Ktor.commonSerialization)
         //api(Deps.kermit)
->>>>>>> Set_build_gradle_as_KaMPKit
     }
 
 

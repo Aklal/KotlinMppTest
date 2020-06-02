@@ -34,7 +34,7 @@ android {
 
 dependencies {
     implementation(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
-    implementation(project(":SharedCode"))
+    implementation(project(":shared"))
     implementation(Deps.recyclerView)
     implementation(Deps.material_x)
     implementation(Deps.app_compat_x)

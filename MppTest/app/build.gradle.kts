@@ -39,7 +39,6 @@ dependencies {
     implementation(Deps.material_x)
     implementation(Deps.app_compat_x)
     implementation(Deps.core_ktx)
-    implementation(Deps.Ktor.androidCore)
     implementation(Deps.constraintlayout)
 //    implementation(Deps.SqlDelight.runtimeJdk)
 //    implementation(Deps.SqlDelight.driverAndroid)
@@ -48,4 +47,7 @@ dependencies {
 //    implementation(Deps.multiplatformSettings)
 //    implementation(Deps.koinCore)
     testImplementation(Deps.junit)
+    implementation(Deps.Ktor.androidCore){
+        because("Fix _Cannot access class 'io.ktor.client.engine.HttpClientEngine'_ ")
+    }
 }

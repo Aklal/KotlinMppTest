@@ -18,6 +18,7 @@ object Versions {
     val serialization = "0.20.0"
     val cocoapodsext = "0.9"
     val kermit = "0.1.5"
+    val okHttp3 = "4.7.2"
 }
 
 object Deps {
@@ -28,6 +29,7 @@ object Deps {
     val recyclerView = "androidx.recyclerview:recyclerview:1.1.0"
     val android_gradle_plugin = "com.android.tools.build:gradle:${Versions.android_gradle_plugin}"
     val junit = "junit:junit:${Versions.junit}"
+    val okHttpLogging =     "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp3}"
 //    val stately = "co.touchlab:stately-common:${Versions.stately}"
 //    val multiplatformSettings = "com.russhwolf:multiplatform-settings:${Versions.multiplatformSettings}"
 //    val multiplatformSettingsTest = "com.russhwolf:multiplatform-settings-test:${Versions.multiplatformSettings}"

@@ -68,7 +68,7 @@ object Deps {
         val commonJson = "io.ktor:ktor-client-json:${Versions.ktor}"
 //        val commonLogging = "io.ktor:ktor-client-logging:${Versions.ktor}"
 //        val jvmCore =     "io.ktor:ktor-client-core-jvm:${Versions.ktor}"
-//        val androidCore = "io.ktor:ktor-client-okhttp:${Versions.ktor}"
+        val androidCore = "io.ktor:ktor-client-okhttp:${Versions.ktor}"
 //        val jvmJson =     "io.ktor:ktor-client-json-jvm:${Versions.ktor}"
 //        val jvmLogging =     "io.ktor:ktor-client-logging-jvm:${Versions.ktor}"
 //        val ios =         "io.ktor:ktor-client-ios:${Versions.ktor}"

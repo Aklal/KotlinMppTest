@@ -50,4 +50,7 @@ dependencies {
     implementation(Deps.Ktor.androidCore){
         because("Fix _Cannot access class 'io.ktor.client.engine.HttpClientEngine'_ ")
     }
+    implementation(Deps.okHttpLogging){
+        because("Required to use *HttpLoggingInterceptor when creating an http client")
+    }
 }

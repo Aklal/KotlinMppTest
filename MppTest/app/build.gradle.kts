@@ -10,7 +10,7 @@ android {
     compileSdkVersion(Versions.compile_sdk)
     buildToolsVersion = Versions.buildToolsVersion
     defaultConfig {
-        applicationId = "co.touchlab.kampstarter"
+        applicationId = "com.mpp.mpptest"
         minSdkVersion(Versions.min_sdk)
         targetSdkVersion(Versions.target_sdk)
         versionCode = 1
@@ -34,12 +34,11 @@ android {
 
 dependencies {
     implementation(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
-    implementation(project(":SharedCode"))
+    implementation(project(":shared"))
     implementation(Deps.recyclerView)
     implementation(Deps.material_x)
     implementation(Deps.app_compat_x)
     implementation(Deps.core_ktx)
-    //implementation(Deps.Ktor.androidCore)
     implementation(Deps.constraintlayout)
 //    implementation(Deps.SqlDelight.runtimeJdk)
 //    implementation(Deps.SqlDelight.driverAndroid)
@@ -48,4 +47,10 @@ dependencies {
 //    implementation(Deps.multiplatformSettings)
 //    implementation(Deps.koinCore)
     testImplementation(Deps.junit)
+    implementation(Deps.Ktor.androidCore){
+        because("Fix _Cannot access class 'io.ktor.client.engine.HttpClientEngine'_ ")
+    }
+    implementation(Deps.okHttpLogging){
+        because("Required to use *HttpLoggingInterceptor when creating an http client")
+    }
 }

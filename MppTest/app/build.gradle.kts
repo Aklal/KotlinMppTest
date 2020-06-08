@@ -53,4 +53,7 @@ dependencies {
     implementation(Deps.okHttpLogging){
         because("Required to use *HttpLoggingInterceptor when creating an http client")
     }
+     implementation(Deps.Coroutines.android){
+        because("Required to use Dispatcher")
+    }
 }

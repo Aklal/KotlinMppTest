@@ -7,16 +7,9 @@ plugins {
     id("com.android.library")
 }
 
-android {
-    compileSdkVersion(29)
-    defaultConfig {
-        minSdkVersion(Versions.min_sdk)
-        targetSdkVersion(Versions.target_sdk)
-        versionCode = 1
-        versionName = "1.0"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-}
+//repositories {
+//    maven(url = "https://dl.bintray.com/aakira/maven")
+//}
 
 android {
     compileSdkVersion(29)
@@ -28,6 +21,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 }
+
 
 
 kotlin {
@@ -48,23 +42,28 @@ kotlin {
 
     jvm("android")
 
-    val serializationVersion = "0.20.0"
-    val ktorVersion = "1.3.2"
+//    sourceSets {
+//        all {
+//            languageSettings.apply {
+//                useExperimentalAnnotation("kotlin.RequiresOptIn")
+//                useExperimentalAnnotation("kotlinx.coroutines.ExperimentalCoroutinesApi")
+//            }
+//        }
+//    }
 
     sourceSets["commonMain"].dependencies {
         implementation(kotlin("stdlib-common", Versions.kotlin))
-        //implementation(Deps.SqlDelight.runtime)
+        implementation(Deps.SqlDelight.runtime)
         implementation(Deps.Ktor.commonCore)
         implementation(Deps.Ktor.commonJson)
-        //implementation(Deps.Ktor.commonLogging)
+        implementation(Deps.Ktor.commonLogging)
         implementation(Deps.Coroutines.common)
-//        implementation(Deps.stately)
-//        implementation(Deps.multiplatformSettings)
-//        implementation(Deps.koinCore)
+        implementation(Deps.stately)
+        implementation(Deps.multiplatformSettings)
+        implementation(Deps.koinCore)
         implementation(Deps.Ktor.commonSerialization)
-        //api(Deps.kermit)
+        //api(Deps.Tools.kermit)
     }
-
 
 //    sourceSets["commonTest"].dependencies {
 //        implementation(Deps.multiplatformSettingsTest)
@@ -76,37 +75,38 @@ kotlin {
     sourceSets["androidMain"].dependencies {
         implementation(kotlin("stdlib", Versions.kotlin))
         //implementation(Deps.SqlDelight.driverAndroid)
-//        implementation(Deps.Ktor.jvmCore)
-//        implementation(Deps.Ktor.jvmJson)
-        //implementation(Deps.Ktor.jvmLogging)
+        implementation(Deps.Ktor.jvmCore)
+        implementation(Deps.Ktor.jvmJson)
+        implementation(Deps.Ktor.jvmLogging)
         implementation(Deps.Coroutines.jdk)
-        //implementation(Deps.Coroutines.android)
+        implementation(Deps.Coroutines.android)
         implementation(Deps.Ktor.androidSerialization)
-//        implementation(Deps.Ktor.androidCore)
+        implementation(Deps.Ktor.androidCore)
     }
 
-    sourceSets["androidTest"].dependencies {
+//    sourceSets["androidTest"].dependencies {
 //        implementation(Deps.KotlinTest.jvm)
 //        implementation(Deps.KotlinTest.junit)
 //        implementation(Deps.AndroidXTest.core)
 //        implementation(Deps.AndroidXTest.junit)
 //        implementation(Deps.AndroidXTest.runner)
 //        implementation(Deps.AndroidXTest.rules)
-        //implementation(Deps.Coroutines.test)
-        implementation("org.robolectric:robolectric:4.3")
-    }
+//        implementation(Deps.Coroutines.test)
+//        implementation("org.robolectric:robolectric:4.3")
+//    }
 
     sourceSets["iosMain"].dependencies {
-        //implementation(Deps.SqlDelight.driverIos)
-//        implementation(Deps.Ktor.ios)
-//        implementation(Deps.Ktor.iosCore)
-//        implementation(Deps.Ktor.iosJson)
-//        implementation(Deps.Ktor.iosLogging)
-//        implementation(Deps.Coroutines.native) {
-//            version {
-//                strictly("1.3.5-native-mt")
-//            }
-//        }
+        implementation(Deps.stately)
+//        implementation(Deps.SqlDelight.driverIos)
+        implementation(Deps.Ktor.ios)
+        implementation(Deps.Ktor.iosCore)
+        implementation(Deps.Ktor.iosJson)
+        implementation(Deps.Ktor.iosLogging)
+        implementation(Deps.Coroutines.native) {
+            version {
+                strictly("1.3.5-native-mt")
+            }
+        }
         implementation(Deps.Ktor.iosSerialization)
     }
 

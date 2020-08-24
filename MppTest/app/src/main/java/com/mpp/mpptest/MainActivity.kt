@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity(), KoinComponent {
             log.e { "Error displayed: $errorMessage" }
             //Snackbar.make(breed_list, errorMessage, Snackbar.LENGTH_SHORT).show()
         })
-        
+
         model.getPostsFromNetwork()
     }
 }

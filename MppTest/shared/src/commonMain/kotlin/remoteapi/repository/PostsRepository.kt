@@ -10,12 +10,17 @@ interface PostsRepository {
     suspend fun getPostById(id: Int): Post
 }
 
-class PostsRepositoryImpl(private val api: PostApiClient): PostsRepository {
-    override suspend fun getPostsList(): List<Post> =
-        when (val result = api.getPosts()) {
-            is Either.Right<List<Post>> ->  result.value
-            is Either.Left ->  emptyList()
+class PostsRepositoryImpl(private val api: PostApiClient) : PostsRepository {
+    override suspend fun getPostsList(): List<Post> {
+
+        val res = when (val result = api.getPosts()) {
+            is Either.Right<List<Post>> -> result.value
+            is Either.Left -> emptyList()
         }
+
+        return res
+    }
+
 
     override suspend fun getPostById(id: Int): Post =
         when (val result = api.getPostById(id.toString())) {

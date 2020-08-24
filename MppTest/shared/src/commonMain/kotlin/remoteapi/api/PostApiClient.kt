@@ -30,7 +30,8 @@ class PostApiClient constructor(
     }
 
     suspend fun getPosts(): Either<RemoteApiError, List<Post>> = try {
-        val postsJson = client.get<String>("ENDPOINT")
+
+        val postsJson = client.get<String>(ENDPOINT)
 
         val posts = jsonInst.parse(Post.serializer().list, postsJson)
         

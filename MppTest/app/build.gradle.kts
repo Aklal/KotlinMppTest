@@ -21,9 +21,12 @@ android {
         exclude("META-INF/*.kotlin_module")
     }
     buildTypes {
-        getByName("release")  {
+        getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -40,17 +43,19 @@ dependencies {
     implementation(Deps.app_compat_x)
     implementation(Deps.core_ktx)
     implementation(Deps.constraintlayout)
-//    implementation(Deps.SqlDelight.runtimeJdk)
-//    implementation(Deps.SqlDelight.driverAndroid)
+//   implementation(Deps.SqlDelight.runtimeJdk)
+//   implementation(Deps.SqlDelight.driverAndroid)
     implementation(Deps.Coroutines.jdk)
-    //implementation(Deps.Coroutines.android)
-//    implementation(Deps.multiplatformSettings)
-//    implementation(Deps.koinCore)
+    implementation(Deps.multiplatformSettings)
+    implementation(Deps.koinCore)
     testImplementation(Deps.junit)
-    implementation(Deps.Ktor.androidCore){
+    implementation(Deps.Ktor.androidCore) {
         because("Fix _Cannot access class 'io.ktor.client.engine.HttpClientEngine'_ ")
     }
-    implementation(Deps.okHttpLogging){
+    implementation(Deps.okHttpLogging) {
         because("Required to use *HttpLoggingInterceptor when creating an http client")
+    }
+    implementation(Deps.Coroutines.android) {
+        because("Required to use Dispatcher")
     }
 }

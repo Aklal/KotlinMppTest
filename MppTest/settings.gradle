@@ -1,3 +1,4 @@
 include(":app", ":shared")
 rootProject.name = "MppTest"
 enableFeaturePreview("GRADLE_METADATA")
+include ':sharedDb'

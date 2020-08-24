@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="sharedDb-android">
+    <output-path>$PROJECT_DIR$/sharedDb/build/libs</output-path>
+    <root id="archive" name="sharedDb-android.jar" />
+  </artifact>
+</component>

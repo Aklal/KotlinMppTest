@@ -62,7 +62,7 @@ kotlin {
         implementation(Deps.multiplatformSettings)
         implementation(Deps.koinCore)
         implementation(Deps.Ktor.commonSerialization)
-        //api(Deps.Tools.kermit)
+        api(Deps.Tools.kermit)
     }
 
 //    sourceSets["commonTest"].dependencies {

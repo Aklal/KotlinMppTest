@@ -84,7 +84,7 @@ object Deps {
         val iosSerialization ="io.ktor:ktor-client-serialization-native:${Versions.ktor}"
     }
 
-//    object Tools{
-//        val kermit = "co.touchlab:kermit:${Versions.kermit}"
-//    }
+    object Tools{
+        val kermit = "co.touchlab:kermit:${Versions.kermit}"
+    }
 }

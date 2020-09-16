@@ -1,0 +1,15 @@
+CREATE TABLE user (
+  key INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  id INTEGER NOT NULL,
+  weight TEXT NOT NULL,
+  height TEXT NOT NULL
+);
+
+insertItem:
+INSERT OR REPLACE INTO user (id, weight, height) VALUES (?, ?, ?);
+--
+selectAll:
+SELECT * FROM user ORDER BY key;
+--
+deleteAll:
+DELETE FROM user;
